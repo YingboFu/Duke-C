@@ -1,0 +1,68 @@
+Grading at Mon 14 Jun 2021 06:00:27 PM UTC
+Compiling deck.c
+In file included from deck.h:4,
+                 from deck.c:4:
+cards.h:1:1: error: expected identifier or ‘(’ before ‘.’ token
+    1 | ../c2prj1_cards/cards.h
+      | ^
+In file included from deck.c:4:
+deck.h:8:2: error: ISO C does not allow extra ‘;’ outside of a function [-Werror=pedantic]
+    8 | };
+      |  ^
+deck.h:12:31: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   12 | int deck_contains(deck_t * d, card_t c) ;
+      |                               ^~~~~~
+      |                               caddr_t
+deck.h:17:33: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   17 | void add_card_to(deck_t * deck, card_t c);
+      |                                 ^~~~~~
+      |                                 caddr_t
+deck.h:18:1: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   18 | card_t * add_empty_card(deck_t * deck);
+      | ^~~~~~
+      | caddr_t
+deck.c: In function ‘print_hand’:
+deck.c:6:26: error: dereferencing pointer to incomplete type ‘deck_t’ {aka ‘struct deck_tag’}
+    6 |   for(int i = 0; i < hand->n_cards; i++) {
+      |                          ^~
+deck.c:7:5: error: implicit declaration of function ‘print_card’; did you mean ‘print_hand’? [-Werror=implicit-function-declaration]
+    7 |     print_card(*(hand->cards[i]));
+      |     ^~~~~~~~~~
+      |     print_hand
+deck.c: At top level:
+deck.c:12:31: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   12 | int deck_contains(deck_t * d, card_t c) {
+      |                               ^~~~~~
+      |                               caddr_t
+deck.c: In function ‘shuffle’:
+deck.c:26:5: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   26 |     card_t * temp = d->cards[r1];
+      |     ^~~~~~
+      |     caddr_t
+deck.c:24:9: error: variable ‘r2’ set but not used [-Werror=unused-but-set-variable]
+   24 |     int r2 = (random() % d->n_cards);
+      |         ^~
+deck.c:23:9: error: variable ‘r1’ set but not used [-Werror=unused-but-set-variable]
+   23 |     int r1 = (random() % d->n_cards);
+      |         ^~
+deck.c: In function ‘assert_full_deck’:
+deck.c:34:5: error: unknown type name ‘card_t’; did you mean ‘caddr_t’?
+   34 |     card_t temp = card_from_num(i);
+      |     ^~~~~~
+      |     caddr_t
+deck.c:34:19: error: implicit declaration of function ‘card_from_num’ [-Werror=implicit-function-declaration]
+   34 |     card_t temp = card_from_num(i);
+      |                   ^~~~~~~~~~~~~
+deck.c:35:9: error: implicit declaration of function ‘deck_contains’ [-Werror=implicit-function-declaration]
+   35 |     if(!deck_contains(d, temp)) {
+      |         ^~~~~~~~~~~~~
+deck.c:36:62: error: request for member ‘value’ in something not a structure or union
+   36 |       printf("The deck does not contain the card: %c%c", temp.value, temp.suit);
+      |                                                              ^
+deck.c:36:74: error: request for member ‘suit’ in something not a structure or union
+   36 |       printf("The deck does not contain the card: %c%c", temp.value, temp.suit);
+      |                                                                          ^
+cc1: all warnings being treated as errors
+Could not compile your deck.c!
+
+Overall Grade: FAILED
