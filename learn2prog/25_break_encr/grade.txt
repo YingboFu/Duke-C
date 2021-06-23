@@ -1,0 +1,15 @@
+Grading at Mon 14 Jun 2021 05:57:47 PM UTC
+Attempting to compile breaker.c 
+gcc -o breaker -pedantic -std=gnu99 -Wall -Werror breaker.c
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
+
+Overall Grade: A
