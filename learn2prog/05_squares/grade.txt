@@ -1,0 +1,7 @@
+Grading at Mon 14 Jun 2021 05:54:47 PM UTC
+Trying to compile your code and link with squares_test.o
+/usr/bin/ld: squares_test.o: relocation R_X86_64_32 against `.rodata' can not be used when making a PIE object; recompile with -fPIE
+collect2: error: ld returned 1 exit status
+Could not compile your code
+
+Overall Grade: FAILED
